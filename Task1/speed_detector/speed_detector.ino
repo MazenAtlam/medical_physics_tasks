@@ -2,16 +2,16 @@
 #include <LiquidCrystal.h>
 
 /*defining some values*/
-#define RS 11 // LCD
-#define EN 10 // LCD
-#define D4 5 // LCD
-#define D5 4 // LCD
-#define D6 3 // LCD
-#define D7 2 // LCD
+#define RS 11 // LCD Register
+#define EN 10 // LCD Enable
+#define D4 5 // LCD data line 1
+#define D5 4 // LCD data line 2
+#define D6 3 // LCD data line 3
+#define D7 2 // LCD data line 4
 #define TRIG 13 // ultrasonic trigger
 #define ECHO 12 // ultrasonic echo
-#define MAX 334.5 // set maximum distance of ultrasonic range
-#define MIN 2 // set minimum distance of ultrasonic range
+#define MAX 3.345 // set maximum distance of ultrasonic range
+#define MIN 0.02 // set minimum distance of ultrasonic range
 
 /*declaration*/
 float get_distance(int trig_pin,int echo_pin);
@@ -33,7 +33,7 @@ void setup() {
 
 /*main code, to run repeatedly*/
 void loop() {
-  long t[2];
+  float t[2];
   float d[2], velocity;
   int i;
 
