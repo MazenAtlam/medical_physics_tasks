@@ -6,6 +6,6 @@
 - This tasks uses arduino to do some functions
 
 ## Tasks
-### velocity Detector
+### Velocity Detector
 - This task uses arduino and ultrasonic to measure the velocity of an object
   and display it on an LCD
