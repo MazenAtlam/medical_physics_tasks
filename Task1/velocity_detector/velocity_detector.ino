@@ -10,8 +10,8 @@
 #define D7 2 // LCD data line 4
 #define TRIG 13 // ultrasonic trigger
 #define ECHO 12 // ultrasonic echo
-#define MAX 3.33 // set maximum distance of ultrasonic range
-#define MIN 0.03 // set minimum distance of ultrasonic range
+#define MAX 3.33 // set maximum distance in meter of ultrasonic range
+#define MIN 0.03 // set minimum distance in meter of ultrasonic range
 
 /*functions declaration*/
 float get_distance(int trig_pin, int echo_pin);
@@ -69,7 +69,8 @@ void loop() {
 
     /*printing on serial monitor*/
     //Serial.print("v = ");
-    //Serial.println(velocity);
+    //Serial.print(velocity);
+    //Serial.println(" m/s");
   }
 }
 
@@ -87,7 +88,7 @@ float get_distance(int trig_pin, int echo_pin) {
 
   delay(50);
   digitalWrite(trig_pin, HIGH); // transmit waves
-  delayMicroseconds(10);
+  delayMicroseconds(10); // wait until all the waves come out
   digitalWrite(trig_pin, LOW); // stop transmitting
 
   time = pulseIn(echo_pin, HIGH); // time of transmitting and recieving in microseconds
